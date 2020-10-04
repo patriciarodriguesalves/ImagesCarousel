@@ -1,0 +1,44 @@
+*{margin:0 ; padding: 0; box-sizing: border-box;}
+
+body{
+    display: grid;
+    place-items: center;
+    height: 100vh;
+}
+
+#items-wrapper{
+    width: 100vw;
+}
+
+#items{
+    display: flex;
+
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+
+}
+
+/*Ajusta uma foto ao lado da outra, mas ocupando a tela inteira e criando um scroll*/
+.item{
+    flex: none;
+
+    width: 100%;
+    height: 400px;
+
+    /*se adapta a imagem que tiver maior, se ajustará na tela*/
+    scroll-snap-align: start;
+
+    /*O scrool vai pegar nas imagens e não mais na barra de scroll*/
+    pointer-events: none;
+}
+
+img{
+    height: 100%;
+    width: 100%;
+
+    /*Cobrirá toda a visão de 100%*/
+    object-fit: cover;
+
+}
